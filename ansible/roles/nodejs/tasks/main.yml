@@ -1,0 +1,46 @@
+---
+
+# this role is mostly taken from here:
+# https://github.com/nodesource/ansible-nodejs-role
+
+- name: Ensure the system can use the HTTPS transport for APT
+  stat:
+    path: /usr/lib/apt/methods/https
+  register: apt_https_transport
+
+- name: Install HTTPS transport for APT
+  apt:
+    pkg: apt-transport-https
+    state: installed
+  when: not apt_https_transport.stat.exists
+
+- name: Import the NodeSource GPG key into apt
+  apt_key:
+    url: https://deb.nodesource.com/gpgkey/nodesource.gpg.key
+    state: present
+
+- name: Add NodeSource deb repository
+  apt_repository:
+    repo: 'deb https://deb.nodesource.com/node_4.x {{ ansible_distribution_release }} main'
+    state: present
+
+- name: Add NodeSource deb-src repository
+  apt_repository:
+    repo: 'deb-src https://deb.nodesource.com/node_4.x {{ ansible_distribution_release }} main'
+    state: present
+
+- name: Install Node.js 4.4
+  apt:
+    pkg:
+      - nodejs=4.4*
+    state: installed
+    update_cache: yes
+
+- name: Update NPM
+  npm: name=npm global=yes state=latest
+
+# - name: Install NPM packages
+#   npm: global=yes name={{item}}
+#   with_items:
+#     - uglifyjs
+#     - csso

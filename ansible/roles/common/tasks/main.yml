@@ -1,0 +1,16 @@
+---
+
+- name: Update Apt cache
+  apt: update_cache=yes cache_valid_time=86400
+  register: apt_cache_update
+  until: apt_cache_update|success
+  retries: 5
+  delay: 5
+
+- name: Install common server packages
+  apt: name={{ item }} state=installed
+  with_items:
+    - vim
+    - git
+    - unzip
+    - curl
