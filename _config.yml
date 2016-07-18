@@ -1,0 +1,10 @@
+# Site settings
+title: JAV - Jekyll-Ansible-Vagrant Starter Pack
+
+# Build settings
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Vagrantfile
+  - README.md
