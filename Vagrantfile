@@ -6,14 +6,12 @@ Vagrant.require_version ">= 1.8.2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "bento/ubuntu-14.04"
   config.vm.network :private_network, ip: "192.168.33.33"
-  config.vm.network :forwarded_port, guest: 4000, host: 80
   config.vm.synced_folder ".", "/vagrant", type: "nfs"
   config.ssh.insert_key = false
   config.ssh.forward_agent = true
 
-  # install Ansible within the VM, install Galaxy roles and run our playbook
+  # install Ansible within the VM and run our playbook
   config.vm.provision "ansible_local" do |ansible|
-    ansible.galaxy_role_file = "ansible/requirements.yml"
     ansible.playbook = "ansible/jav.yml"
   end
 

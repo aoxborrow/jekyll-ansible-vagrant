@@ -3,8 +3,10 @@
 - name: Configuration for local Jekyll development on Vagrant VM
   hosts: all
   become: yes
+  vars:
+    ruby_version: ruby2.2
   roles:
     - common
-    - rvm_io.rvm1-ruby
+    - ruby
     - jekyll
-#    - nodejs
+    - nodejs

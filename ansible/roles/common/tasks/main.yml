@@ -12,5 +12,6 @@
   with_items:
     - vim
     - git
+    - htop
     - unzip
     - curl

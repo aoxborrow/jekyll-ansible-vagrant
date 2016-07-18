@@ -5,9 +5,9 @@ JAV
 
 #### Description
 This is a starter pack for quickly developing a new Jekyll project locally with Vagrant, which is then easily deployed with Github Pages. It is based on a stock Ubuntu 14.04 base image, and uses Ansible to install and configure the basic services you'll need:
- - Ruby & Bundler (from official RVM Ansible role)
+ - Ruby 2.2 & Bundler
  - Github-Pages gem (this includes Jekyll)
- - Node.js (Why?)
+ - Node.js (Jekyll requirement)
 
 #### Features
 - fully self-contained, installs Ansible within the VM
@@ -41,7 +41,7 @@ This is a starter pack for quickly developing a new Jekyll project locally with 
     ```sh
     vagrant ssh
     cd /vagrant
-    jekyll serve
+    jekyll serve --host 0.0.0.0 --port 80
     ```
 
 0. Visit your app:
