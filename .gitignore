@@ -2,3 +2,4 @@
 .vagrant
 Gemfile.lock
 ansible/*.retry
+ansible/roles/rvm_io.rvm1-ruby

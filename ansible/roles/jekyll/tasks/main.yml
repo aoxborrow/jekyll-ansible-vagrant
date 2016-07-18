@@ -1,4 +1,4 @@
 ---
 
-- name: Install Github-Pages gem from Gemfile
+- name: Install/Update Github-Pages requirements from Gemfile
   bundler: state=latest gemfile=../Gemfile
