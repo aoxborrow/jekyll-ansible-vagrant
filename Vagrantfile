@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # install Ansible within the VM and run our playbook
   config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "ansible/jav.yml"
+    ansible.playbook = "_ansible/jav.yml"
   end
 
   config.vm.provider "vmware_fusion" do |vf|
