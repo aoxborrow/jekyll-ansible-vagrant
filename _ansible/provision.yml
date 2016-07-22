@@ -1,6 +1,6 @@
 ---
 
-- name: Configuration for local Jekyll development on Vagrant VM
+- name: Provisioning for local Jekyll development on Vagrant VM
   hosts: all
   become: yes
   vars:

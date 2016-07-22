@@ -1,7 +1,5 @@
-JAV
+Jekyll-Ansible-Vagrant *Starter Pack*
 ===
-
-### Jekyll-Ansible-Vagrant *Starter Pack*
 
 #### Description
 This is a starter pack for quickly developing a new Jekyll project locally with Vagrant, which is then easily deployed with Github Pages. It is based on a stock Ubuntu 14.04 base image, and uses Ansible to install and configure the basic services you'll need:
@@ -22,13 +20,13 @@ This is a starter pack for quickly developing a new Jekyll project locally with 
 
 0. Clone this repo:
     ```
-    git clone git@github.com:paste/jav.git
+    git clone git@github.com:paste/jekyll-ansible-vagrant.git
     ```
 
 0. Modify your computer's local `/etc/hosts`:
 
     ```
-    192.168.33.33   jav.local
+    192.168.33.33   jekyll.local
     ```
 
 0. Build your Vagrant VM:
@@ -46,7 +44,7 @@ This is a starter pack for quickly developing a new Jekyll project locally with 
 
 0. Visit your app:
     ```
-    http://jav.local
+    http://jekyll.local
     ```
 
 0. **Profit** :heavy_check_mark:

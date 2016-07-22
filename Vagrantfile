@@ -12,19 +12,19 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # install Ansible within the VM and run our playbook
   config.vm.provision "ansible_local" do |ansible|
-    ansible.playbook = "_ansible/jav.yml"
+    ansible.playbook = "_ansible/provision.yml"
   end
 
   config.vm.provider "vmware_fusion" do |vf|
     vf.gui = true
-    vf.vmx['displayname'] = "jav"
+    vf.vmx['displayname'] = "jekyll"
     vf.vmx["memsize"] = "1024"
     vf.vmx["numvcpus"] = "2"
   end
 
   config.vm.provider "virtualbox" do |vb|
     vb.gui = true
-    vb.name = "jav"
+    vb.name = "jekyll"
     vb.memory = "1024"
     vb.cpus = 2
   end
