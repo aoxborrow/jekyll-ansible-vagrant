@@ -29,10 +29,10 @@
     repo: 'deb-src https://deb.nodesource.com/node_4.x {{ ansible_distribution_release }} main'
     state: present
 
-- name: Install Node.js 4.4
+- name: Install Node.js
   apt:
     pkg:
-      - nodejs=4.4*
+      - nodejs=4.*
     state: installed
     update_cache: yes
 
