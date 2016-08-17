@@ -2,6 +2,5 @@
 .vagrant
 Gemfile.lock
 _ansible/*.retry
-_site
 .sass-cache
 .jekyll-metadata

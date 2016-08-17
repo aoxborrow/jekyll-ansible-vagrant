@@ -2,6 +2,7 @@
 title: Jekyll-Ansible-Vagrant Starter Pack
 
 # Build settings
+destination: ./docs
 markdown: kramdown
 exclude:
   - Gemfile
